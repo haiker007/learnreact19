@@ -1,12 +1,29 @@
-import { Button } from "antd"
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { ConfigProvider } from 'antd';
+import { RouterProvider } from 'react-router-dom';
 
-function App() {
+import router from '@/router';
+
+import enUS from 'antd/locale/en_US';
+import jaJP from 'antd/locale/ja_JP';
+
+const localeMap: { [key: string]: typeof enUS } = {
+  en: enUS,
+  ja: jaJP,
+};
+
+const AppConfig: React.FC = () => {
+  const { i18n } = useTranslation();
+
+  const langCode = i18n.language.split('-')[0];
+  const antdLocale = localeMap[langCode] || enUS;
+
   return (
-    <div className="App">
-      <h1>My React 19 App</h1>
-      <Button type="primary">Ant Design Button</Button>
-    </div>
+    <ConfigProvider locale={antdLocale}>
+      <RouterProvider router={router} />
+    </ConfigProvider>
   );
-}
+};
 
-export default App
+export default AppConfig;

@@ -1,16 +1,18 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { StrictMode, Suspense } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
 
-const router = createBrowserRouter([{
-  path: '/',
-  element: <App />,
-}])
+import 'antd/dist/reset.css';
+import { store } from '@/store/store';
+import '@/i18n';
+import AppConfig from '@/App';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <Suspense fallback={<div>Loading Translations...</div>}>
+        <AppConfig />
+      </Suspense>
+    </Provider>
   </StrictMode>,
-)
+);
