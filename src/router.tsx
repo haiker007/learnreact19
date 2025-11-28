@@ -1,10 +1,7 @@
-import { createBrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 
 import AdminLayout from '@/components/AdminLayout/AdminLayout';
-import DashboardPage from '@/pages/DashboardPage';
 import LoginPage from '@/pages/LoginPage';
-import SettingsPage from '@/pages/SettingsPage';
-import UserPage from '@/pages/UserPage';
 
 const router = createBrowserRouter([
   {
@@ -12,24 +9,15 @@ const router = createBrowserRouter([
     element: <LoginPage />,
   },
   {
+    // The AdminLayout will handle all content rendering via Tabs
     path: '/',
     element: <AdminLayout />,
+    // We remove children routes because the component will be loaded internally.
+    // We keep a single index redirect for initial landing.
     children: [
       {
-        path: '/dashboard',
-        element: <DashboardPage />,
-      },
-      {
-        path: '/users',
-        element: <UserPage />,
-      },
-      {
-        path: '/settings',
-        element: <SettingsPage />,
-      },
-      {
         path: '/',
-        element: <DashboardPage />,
+        element: <Navigate to="/dashboard" replace />,
       },
       {
         path: '*',
