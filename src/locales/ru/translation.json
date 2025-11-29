@@ -1,0 +1,11 @@
+{
+  "welcome_message": "Добро пожаловать в панель администратора",
+  "logout_button": "Выйти",
+  "user_management": "Управление пользователями",
+  "menu_dashboard": "Панель управления",
+  "menu_users": "Пользователи",
+  "menu_user_list": "Список пользователей",
+  "menu_user_roles": "Роли и разрешения",
+  "menu_settings": "Настройки",
+  "loading": "Загрузка..."
+}

@@ -1,0 +1,11 @@
+{
+  "welcome_message": "Bienvenido/a al Panel de Administración",
+  "logout_button": "Cerrar sesión",
+  "user_management": "Gestión de usuarios",
+  "menu_dashboard": "Panel de control",
+  "menu_users": "Usuarios",
+  "menu_user_list": "Lista de usuarios",
+  "menu_user_roles": "Roles y permisos",
+  "menu_settings": "Configuración",
+  "loading": "Cargando..."
+}

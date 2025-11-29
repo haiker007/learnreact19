@@ -9,6 +9,7 @@ export interface NavItem {
   path: string; // The route path for React Router
   componentKey: string; // A key to identify which component to render
   children?: NavItem[];
+  icon?: string;
 }
 
 // Define the shape of an open tab
@@ -17,6 +18,7 @@ export interface TabItem {
   label: string;
   componentKey: string;
   closable: boolean;
+  icon?: string; // TODO : Define a proper type for icons
 }
 
 interface TabState {
@@ -28,23 +30,24 @@ interface TabState {
 const initialState: TabState = {
   // Placeholder Data: You will fetch this from an API in a real app
   menuData: [
-    { key: '/dashboard', label: 'Dashboard', path: '/dashboard', componentKey: 'DashboardPage' },
+    { key: '/dashboard', label: 'menu_dashboard', icon: 'DashboardOutlined', path: '/dashboard', componentKey: 'DashboardPage' },
     {
       key: 'user-group',
-      label: 'Users',
+      label: 'menu_users',
       path: '/users',
+      icon: 'TeamOutlined',
       componentKey: 'UserGroup',
       children: [
-        { key: '/users/list', label: 'User List', path: '/users/list', componentKey: 'UsersPage' },
-        { key: '/users/roles', label: 'Roles & Permissions', path: '/users/roles', componentKey: 'RolesPage' },
+        { key: '/users/list', label: 'menu_user_list', icon: 'UserOutlined', path: '/users/list', componentKey: 'UsersPage' },
+        { key: '/users/roles', label: 'menu_user_roles', icon: 'SafetyOutlined', path: '/users/roles', componentKey: 'RolesPage' },
       ],
     },
-    { key: '/settings', label: 'Settings', path: '/settings', componentKey: 'SettingsPage' },
+    { key: '/settings', label: 'menu_settings', icon: 'SettingOutlined', path: '/settings', componentKey: 'SettingsPage' },
   ],
   activeKey: '/dashboard', // Start on the dashboard
   openTabs: [
     // Initialize with the default starting tab
-    { key: '/dashboard', label: 'Dashboard', componentKey: 'DashboardPage', closable: false },
+    { key: '/dashboard', label: 'menu_dashboard', icon: 'DashboardOutlined', componentKey: 'DashboardPage', closable: false },
   ],
 };
 
@@ -60,6 +63,7 @@ export const tabSlice = createSlice({
           label: action.payload.label,
           componentKey: action.payload.componentKey,
           closable: true, // Allow closing all new tabs
+          icon: action.payload.icon,
         });
       }
       state.activeKey = action.payload.key;

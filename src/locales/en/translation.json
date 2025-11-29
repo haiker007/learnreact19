@@ -1,0 +1,11 @@
+{
+  "welcome_message": "Welcome to the Admin Dashboard",
+  "logout_button": "Logout",
+  "user_management": "User Management",
+  "menu_dashboard": "Dashboard",
+  "menu_users": "Users",
+  "menu_user_list": "User List",
+  "menu_user_roles": "Roles & Permissions",
+  "menu_settings": "Settings",
+  "loading": "Loading..."
+}

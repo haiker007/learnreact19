@@ -1,0 +1,11 @@
+{
+  "welcome_message": "管理者ダッシュボードへようこそ",
+  "logout_button": "ログアウト",
+  "user_management": "ユーザー管理",
+  "menu_dashboard": "ダッシュボード",
+  "menu_users": "ユーザー",
+  "menu_user_list": "ユーザー一覧",
+  "menu_user_roles": "ロールと権限",
+  "menu_settings": "設定",
+  "loading": "読み込み中..."
+}

@@ -1,0 +1,11 @@
+{
+  "welcome_message": "歡迎來到管理員儀表板",
+  "logout_button": "登出",
+  "user_management": "用戶管理",
+  "menu_dashboard": "儀表板",
+  "menu_users": "用戶",
+  "menu_user_list": "用戶列表",
+  "menu_user_roles": "角色與權限",
+  "menu_settings": "設定",
+  "loading": "載入中..."
+}

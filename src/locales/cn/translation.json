@@ -1,0 +1,11 @@
+{
+  "welcome_message": "欢迎来到管理员仪表盘",
+  "logout_button": "退出登录",
+  "user_management": "用户管理",
+  "menu_dashboard": "仪表盘",
+  "menu_users": "用户",
+  "menu_user_list": "用户列表",
+  "menu_user_roles": "角色与权限",
+  "menu_settings": "设置",
+  "loading": "加载中..."
+}
