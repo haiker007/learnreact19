@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOM! BOX | THE VAULT</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'acid-purple': '#6B2CF5',
+              'neon-lime': '#CCFF00',
+              'hot-pink': '#FF0099',
+              'electric-blue': '#2D00F7',
+              'warning-yellow': '#FFEA00',
+              'rich-black': '#0a0a0a',
+              'metal-gray': '#2a2a2a',
+            },
+            fontFamily: {
+              display: ['"Bungee"', 'cursive'],
+              body: ['"Space Grotesk"', 'sans-serif'],
+              mono: ['"Share Tech Mono"', 'monospace'],
+            },
+            boxShadow: {
+              hard: '5px 5px 0px 0px #CCFF00',
+              'hard-pink': '5px 5px 0px 0px #FF0099',
+              'hard-deep': '8px 8px 0px 0px #000000',
+              'glow-text': '0 0 10px rgba(204, 255, 0, 0.7)',
+            },
+            borderWidth: {
+              3: '3px',
+            },
+            backgroundImage: {
+              'grid-pattern': 'linear-gradient(to right, #222 1px, transparent 1px), linear-gradient(to bottom, #222 1px, transparent 1px)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* 全息闪卡效果 */
+      .holo-card {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .holo-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 200%;
+        height: 100%;
+        background: linear-gradient(
+          115deg,
+          transparent 20%,
+          rgba(255, 255, 255, 0.4) 40%,
+          rgba(255, 0, 153, 0.4) 45%,
+          rgba(204, 255, 0, 0.4) 50%,
+          rgba(45, 0, 247, 0.4) 55%,
+          transparent 70%
+        );
+        transform: skewX(-20deg);
+        transition: left 0.5s;
+        pointer-events: none;
+        z-index: 20;
+        mix-blend-mode: overlay;
+      }
+      .holo-card:hover::before {
+        left: 100%;
+        transition: left 0.7s;
+      }
+
+      /* 扫描线背景 */
+      .scanlines {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.2));
+        background-size: 100% 4px;
+      }
+    </style>
+  </head>
+  <body class="bg-rich-black font-body text-white min-h-screen bg-grid-pattern [background-size:40px_40px]">
+    <nav class="bg-rich-black border-b-3 border-neon-lime py-4 sticky top-0 z-50 shadow-[0_4px_0_#222]">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <a href="#" class="text-2xl font-display text-white tracking-widest"> BOOM! <span class="text-neon-lime">VAULT</span> </a>
+        <div class="flex gap-4 items-center">
+          <span class="font-mono text-neon-lime text-xs md:text-sm animate-pulse">
+            <i class="fa-solid fa-circle text-[8px] mr-1"></i> LIVE MARKET
+          </span>
+          <button
+            class="w-10 h-10 rounded-full border-2 border-white bg-transparent hover:bg-white hover:text-black transition-colors flex items-center justify-center"
+          >
+            <i class="fa-solid fa-user-astronaut"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section class="container mx-auto px-4 py-12">
+      <div class="relative bg-metal-gray border-3 border-neon-lime rounded-3xl p-1 shadow-[0_0_30px_rgba(204,255,0,0.15)]">
+        <div class="absolute -top-1 -left-1 w-6 h-6 border-l-4 border-t-4 border-white z-20"></div>
+        <div class="absolute -bottom-1 -right-1 w-6 h-6 border-r-4 border-b-4 border-white z-20"></div>
+
+        <div class="bg-black rounded-[1.3rem] overflow-hidden relative flex flex-col md:flex-row">
+          <div class="md:w-1/2 relative h-[400px] md:h-[500px] overflow-hidden group">
+            <img
+              src="https://placehold.co/600x600/111111/CCFF00/png?text=MEGA+SPACE+MOLLY+1000%25"
+              class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 group-hover:scale-105"
+            />
+            <div
+              class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-30 mix-blend-overlay"
+            ></div>
+
+            <div class="absolute bottom-6 left-6">
+              <span class="bg-hot-pink text-white font-display px-3 py-1 border-2 border-white transform -rotate-2 inline-block mb-2"
+                >UR (ULTRA RARE)</span
+              >
+              <h2 class="text-4xl md:text-5xl font-display text-white leading-none drop-shadow-[2px_2px_0_#FF0099]">MEGA SPACE MOLLY<br />JELLY</h2>
+            </div>
+          </div>
+
+          <div class="md:w-1/2 p-8 flex flex-col justify-center relative scanlines">
+            <div class="absolute top-4 right-4 text-gray-500 font-mono text-xs border border-gray-600 px-2 py-1">ID: #992-AX-ALPHA</div>
+
+            <div class="mb-8">
+              <p class="font-mono text-hot-pink text-sm mb-1">/// AUCTION ENDING IN</p>
+              <div class="font-display text-6xl md:text-7xl text-white tracking-tighter tabular-nums" id="countdown">02:14:58</div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="bg-rich-black border-2 border-gray-700 p-4 rounded-xl">
+                <p class="text-gray-400 text-xs font-bold uppercase">Current Bid</p>
+                <p class="text-neon-lime font-display text-3xl">$1,250.00</p>
+              </div>
+              <div class="bg-rich-black border-2 border-gray-700 p-4 rounded-xl">
+                <p class="text-gray-400 text-xs font-bold uppercase">Bidders</p>
+                <p class="text-white font-display text-3xl">42 <span class="text-sm font-sans text-gray-500">active</span></p>
+              </div>
+            </div>
+
+            <div class="space-y-4">
+              <div class="flex gap-2">
+                <input
+                  type="text"
+                  value="$1,300.00"
+                  class="bg-white/10 border-2 border-white text-white font-mono text-xl px-4 py-3 rounded-xl w-full focus:outline-none focus:border-neon-lime focus:bg-black transition-colors"
+                />
+                <button
+                  class="bg-neon-lime text-black font-display text-xl px-8 rounded-xl border-3 border-white hover:bg-white hover:border-neon-lime transition-all shadow-hard"
+                >
+                  BID
+                </button>
+              </div>
+              <p class="text-center text-xs font-mono text-gray-500"><i class="fa-solid fa-lock"></i> Verified by Blockchain Tech</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="border-y border-gray-800 bg-rich-black sticky top-20 z-40 overflow-hidden">
+      <div class="flex items-center">
+        <div class="bg-hot-pink text-white font-display px-6 py-3 text-lg border-r border-gray-800 shrink-0">LIVE FEED</div>
+        <div class="flex-1 overflow-hidden relative h-12">
+          <div
+            class="absolute top-0 left-0 h-full flex items-center animate-[marquee_20s_linear_infinite] whitespace-nowrap font-mono text-sm text-neon-lime gap-12 px-4"
+          >
+            <span>USER @KAIJU_BOY JUST WON [SKULLPANDA DARK] FOR $420</span>
+            <span>NEW DROP: [HIRONO V1] ENTERING VAULT IN 5 MINS</span>
+            <span>USER @ALICE_W BID $900 ON [DIMOO ZODIAC]</span>
+            <span>USER @KAIJU_BOY JUST WON [SKULLPANDA DARK] FOR $420</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="container mx-auto px-4 py-16">
+      <div class="flex justify-between items-end mb-10">
+        <h3 class="text-4xl font-display text-white">
+          MARKET LISTINGS <span class="text-hot-pink text-lg ml-2 align-top font-sans bg-white/10 px-2 rounded">18 Active</span>
+        </h3>
+        <div class="flex gap-2">
+          <button class="px-4 py-1 border border-white rounded-full text-xs font-bold hover:bg-white hover:text-black">PRICE ⬆</button>
+          <button class="px-4 py-1 border border-white rounded-full text-xs font-bold hover:bg-white hover:text-black">TIME ⬇</button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="holo-card bg-metal-gray border-3 border-hot-pink rounded-2xl p-4 shadow-hard-pink group hover:-translate-y-2 transition-transform"
+        >
+          <div class="flex justify-between items-center mb-4 border-b border-gray-600 pb-2">
+            <span class="bg-hot-pink text-white text-xs font-bold px-2 py-0.5 rounded">RAFFLE</span>
+            <span class="font-mono text-xs text-hot-pink"><i class="fa-regular fa-clock"></i> 4H LEFT</span>
+          </div>
+
+          <div class="relative aspect-square bg-black rounded-xl overflow-hidden mb-4 border border-gray-600">
+            <img src="https://placehold.co/400x400/222/FF0099/png?text=HIRONO+MIME" class="w-full h-full object-cover" />
+            <div class="absolute bottom-0 w-full bg-gradient-to-t from-black to-transparent p-4">
+              <h4 class="font-bold text-lg text-white">Hirono Mime Ver.</h4>
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between text-sm font-mono text-gray-300">
+              <span>Price</span>
+              <span class="text-white">$15.99</span>
+            </div>
+            <div class="flex justify-between text-sm font-mono text-gray-300">
+              <span>Participants</span>
+              <span class="text-white">1,024</span>
+            </div>
+            <div class="w-full bg-gray-700 h-1 rounded-full overflow-hidden">
+              <div class="bg-hot-pink w-3/4 h-full"></div>
+            </div>
+            <button
+              class="w-full bg-transparent border-2 border-hot-pink text-hot-pink font-display py-3 rounded-lg hover:bg-hot-pink hover:text-white transition-all uppercase tracking-wider"
+            >
+              Join Draw
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="holo-card bg-metal-gray border-3 border-white rounded-2xl p-4 shadow-[5px_5px_0px_0px_#FFFFFF] group hover:-translate-y-2 transition-transform"
+        >
+          <div class="flex justify-between items-center mb-4 border-b border-gray-600 pb-2">
+            <span class="bg-white text-black text-xs font-bold px-2 py-0.5 rounded">RESALE</span>
+            <span class="font-mono text-xs text-white">VERIFIED <i class="fa-solid fa-check-circle text-neon-lime"></i></span>
+          </div>
+
+          <div class="relative aspect-square bg-black rounded-xl overflow-hidden mb-4 border border-gray-600">
+            <img src="https://placehold.co/400x400/222/FFFFFF/png?text=MOLLY+X+INSTINCT" class="w-full h-full object-cover" />
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between items-end">
+              <h4 class="font-bold text-lg text-white">Molly x Instinct Toy</h4>
+              <span class="font-display text-2xl text-neon-lime">$450.00</span>
+            </div>
+            <div class="p-2 bg-black/50 rounded border border-gray-700 text-xs text-gray-400">Condition: Mint (Opened Box / Sealed Bag)</div>
+            <button class="w-full bg-white text-black font-display py-3 rounded-lg hover:bg-neon-lime transition-all border-2 border-transparent">
+              BUY NOW
+            </button>
+          </div>
+        </div>
+
+        <div class="holo-card bg-metal-gray border-3 border-neon-lime rounded-2xl p-4 shadow-hard group hover:-translate-y-2 transition-transform">
+          <div class="flex justify-between items-center mb-4 border-b border-gray-600 pb-2">
+            <span class="bg-neon-lime text-black text-xs font-bold px-2 py-0.5 rounded animate-pulse">LIVE BID</span>
+            <span class="font-mono text-xs text-neon-lime">32 BIDS</span>
+          </div>
+
+          <div class="relative aspect-square bg-black rounded-xl overflow-hidden mb-4 border border-gray-600">
+            <img
+              src="https://placehold.co/400x400/222/CCFF00/png?text=DIMOO+GOLD"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+            />
+            <div
+              class="absolute top-2 right-2 bg-black/80 backdrop-blur text-white font-mono text-xs px-2 py-1 rounded border border-red-500 text-red-500"
+            >
+              00:05:32
+            </div>
+          </div>
+
+          <div class="space-y-3">
+            <div class="flex justify-between items-end">
+              <h4 class="font-bold text-lg text-white">Dimoo Gold Plated</h4>
+              <span class="font-display text-2xl text-white">$890.00</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-gray-400">
+              <div class="w-5 h-5 rounded-full bg-blue-500"></div>
+              <span>High Bidder: SpeedRacer</span>
+            </div>
+            <button
+              class="w-full bg-neon-lime text-black font-display py-3 rounded-lg hover:bg-white transition-all border-2 border-transparent relative overflow-hidden"
+            >
+              PLACE BID
+              <div class="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-500"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-gray-800 bg-black py-8 text-center text-gray-600 text-xs font-mono">
+      <p>THE VAULT IS SECURED BY 256-BIT ENCRYPTION.</p>
+      <p class="mt-2">ALL TRADES ARE FINAL. GOOD LUCK.</p>
+    </footer>
+  </body>
+</html>

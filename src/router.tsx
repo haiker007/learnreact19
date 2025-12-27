@@ -8,6 +8,9 @@ const LoginPage = lazy(() => import('@/pages/LoginPage'));
 const DashboardPage = lazy(() => import('@/pages/DashboardPage'));
 const UsersPage = lazy(() => import('@/pages/UserPage'));
 const SettingsPage = lazy(() => import('@/pages/SettingsPage'));
+const CmsPage = lazy(() => import('@/pages/CmsPage'));
+const ModelListPage = lazy(() => import('@/pages/ModelListPage'));
+const DynamicEditPage = lazy(() => import('@/pages/DynamicEditPage'));
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,30 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Navigate to="/dashboard" replace />,
+      },
+      {
+        path: 'cms',
+        element: (
+          <SuspenseWrapper loadingKey="loading">
+            <CmsPage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: 'models',
+        element: (
+          <SuspenseWrapper loadingKey="loading">
+            <ModelListPage />
+          </SuspenseWrapper>
+        ),
+      },
+      {
+        path: 'editmodels',
+        element: (
+          <SuspenseWrapper loadingKey="loading">
+            <DynamicEditPage />
+          </SuspenseWrapper>
+        ),
       },
       {
         path: 'dashboard',

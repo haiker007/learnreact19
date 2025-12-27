@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import exampleReducer from '@/features/example/exampleSlice';
-import authReducer from '@/features/example/exampleSlice';
+import authReducer from '@/features/auth/authSlice';
 import tabReducer from '@/features/tab/tabSlice';
 // import { useDispatch, useSelector } from 'react-redux';
 

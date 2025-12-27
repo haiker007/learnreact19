@@ -1,8 +1,8 @@
 import { Breadcrumb, Button, Layout, Menu, Select, Space, Tabs, Typography } from 'antd';
-import { useAdminLayout } from './useAdminLayout';
+import { useAdminLayout } from '@/components/AdminLayout/useAdminLayout';
 import { LogoutOutlined } from '@ant-design/icons';
 import { Outlet } from 'react-router-dom';
-import DynamicIcon from '../DynamicIcon';
+import DynamicIcon from '@/components/DynamicIcon';
 
 const { Header, Sider, Content, Footer } = Layout;
 const { Title, Text } = Typography;

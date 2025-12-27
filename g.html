@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOM! BOX | Security Protocol</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'acid-purple': '#6B2CF5',
+                        'neon-lime': '#CCFF00',
+                        'hot-pink': '#FF0099',
+                        'rich-black': '#111111',
+                    },
+                    fontFamily: {
+                        'display': ['"Bungee"', 'cursive'],
+                        'body': ['"Space Grotesk"', 'sans-serif'],
+                        'mono': ['"Share Tech Mono"', 'monospace'],
+                    },
+                    boxShadow: {
+                        'hard': '4px 4px 0px 0px #000000',
+                        'hard-green': '4px 4px 0px 0px #CCFF00',
+                    },
+                    borderWidth: {'3': '3px'},
+                    animation: { 'scan': 'scan 4s linear infinite' },
+                    keyframes: {
+                        scan: { '0%': { transform: 'translateY(-100%)' }, '100%': { transform: 'translateY(100%)' } }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-rich-black font-body text-black min-h-screen">
+
+    <nav class="bg-white border-b-3 border-black py-4 sticky top-0 z-50 shadow-hard">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="#" class="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-white hover:bg-neon-lime hover:text-black transition-colors"><i class="fa-solid fa-arrow-left"></i></a>
+                <span class="text-xl font-display">SECURITY PROTOCOL</span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8 flex gap-8">
+        <aside class="hidden lg:block w-1/4">
+            <div class="bg-white border-3 border-black rounded-2xl p-4 shadow-hard">
+                <nav class="space-y-2">
+                    <a href="#" class="block font-bold text-lg px-4 py-3 text-gray-400 hover:text-black hover:bg-gray-100 rounded-xl"><i class="fa-solid fa-id-card mr-2"></i> PROFILE</a>
+                    <a href="#" class="block font-bold text-lg px-4 py-3 bg-neon-lime border-3 border-black rounded-xl shadow-hard"><i class="fa-solid fa-shield-halved mr-2"></i> SECURITY</a>
+                    <a href="#" class="block font-bold text-lg px-4 py-3 text-gray-400 hover:text-black hover:bg-gray-100 rounded-xl"><i class="fa-solid fa-bell mr-2"></i> NOTIFICATIONS</a>
+                </nav>
+            </div>
+            <div class="mt-4 bg-rich-black border-3 border-white text-neon-lime p-4 rounded-2xl font-mono text-xs text-center">
+                <i class="fa-solid fa-lock text-4xl mb-2"></i>
+                <p>ENCRYPTION: AES-256</p>
+                <p>STATUS: SECURE</p>
+            </div>
+        </aside>
+
+        <main class="w-full lg:w-3/4 space-y-8">
+            
+            <section class="bg-white border-3 border-black rounded-3xl p-8 shadow-hard relative overflow-hidden">
+                <div class="flex justify-between items-start mb-6 relative z-10">
+                    <div>
+                        <h2 class="font-display text-2xl text-acid-purple">ACCESS CODES</h2>
+                        <p class="font-bold text-gray-500">Update your password regularly.</p>
+                    </div>
+                    <i class="fa-solid fa-key text-4xl text-gray-200"></i>
+                </div>
+
+                <div class="space-y-4 relative z-10">
+                    <div>
+                        <label class="font-bold text-xs bg-black text-white px-2 py-1">CURRENT PASSWORD</label>
+                        <div class="relative mt-1">
+                            <input type="password" value="********" class="w-full bg-gray-100 border-3 border-black rounded-xl px-4 py-3 font-mono">
+                            <button class="absolute right-4 top-3 text-gray-400 hover:text-black"><i class="fa-solid fa-eye"></i></button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="font-bold text-xs bg-neon-lime text-black px-2 py-1 border border-black">NEW PASSWORD</label>
+                            <input type="password" class="w-full mt-1 bg-white border-3 border-black rounded-xl px-4 py-3 font-mono focus:shadow-[4px_4px_0_#CCFF00] focus:outline-none transition-all">
+                        </div>
+                        <div>
+                            <label class="font-bold text-xs bg-gray-200 text-black px-2 py-1 border border-black">CONFIRM</label>
+                            <input type="password" class="w-full mt-1 bg-white border-3 border-black rounded-xl px-4 py-3 font-mono focus:shadow-[4px_4px_0_#CCFF00] focus:outline-none transition-all">
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-200 h-2 rounded-full border border-black overflow-hidden flex">
+                        <div class="w-1/4 bg-red-500 border-r border-black"></div>
+                        <div class="w-1/4 bg-yellow-400 border-r border-black"></div>
+                        <div class="w-1/4 bg-neon-lime border-r border-black"></div>
+                        <div class="w-1/4 bg-transparent"></div>
+                    </div>
+                    <p class="text-xs font-mono text-right text-neon-lime bg-black inline-block float-right px-2">STRENGTH: STRONG</p>
+                </div>
+            </section>
+
+            <section class="bg-neon-lime border-3 border-black rounded-3xl p-8 shadow-hard flex flex-col md:flex-row gap-8 items-center">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <h2 class="font-display text-2xl">2-FACTOR AUTH</h2>
+                        <span class="bg-black text-white px-2 py-1 text-xs font-mono rounded animate-pulse">RECOMMENDED</span>
+                    </div>
+                    <p class="font-bold text-sm mb-4">Secure your account with an Authenticator App. Don't get hacked, stay based.</p>
+                    <div class="flex gap-2">
+                        <div class="w-10 h-10 bg-black text-white rounded flex items-center justify-center text-xl"><i class="fa-brands fa-google"></i></div>
+                        <div class="w-10 h-10 bg-black text-white rounded flex items-center justify-center text-xl"><i class="fa-brands fa-microsoft"></i></div>
+                        <div class="w-10 h-10 bg-black text-white rounded flex items-center justify-center text-xl"><i class="fa-solid fa-key"></i></div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-4 rounded-xl border-3 border-black shadow-[4px_4px_0_#000] text-center w-full md:w-auto">
+                    <p class="font-mono text-xs font-bold text-gray-500 mb-2">STATUS: DISABLED</p>
+                    <button class="w-full bg-gray-200 text-gray-400 font-display text-xl px-8 py-4 rounded-lg border-3 border-gray-400 cursor-not-allowed relative overflow-hidden group hover:bg-black hover:text-neon-lime hover:border-black transition-all">
+                        <span class="relative z-10">ENABLE 2FA</span>
+                        <div class="absolute inset-0 bg-stripe-pattern opacity-10"></div>
+                    </button>
+                </div>
+            </section>
+
+            <section>
+                <h3 class="font-display text-white text-xl mb-4 pl-2 border-l-4 border-hot-pink">ACTIVE SESSIONS</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <div class="bg-white border-3 border-black rounded-xl p-4 flex justify-between items-center shadow-hard-green">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-acid-purple text-white border-2 border-black rounded-lg flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-desktop"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold font-mono">CHROME / WINDOWS</h4>
+                                <p class="text-xs font-bold text-green-600"><i class="fa-solid fa-circle text-[8px] mr-1"></i> THIS DEVICE</p>
+                                <p class="text-xs text-gray-500">Tokyo, JP • 10.0.0.12</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-200 border-3 border-gray-400 rounded-xl p-4 flex justify-between items-center opacity-80 hover:opacity-100 transition-opacity">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-white text-black border-2 border-black rounded-lg flex items-center justify-center text-2xl">
+                                <i class="fa-solid fa-mobile-screen"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold font-mono">SAFARI / IPHONE 14</h4>
+                                <p class="text-xs font-bold text-gray-500">Active 2h ago</p>
+                                <p class="text-xs text-gray-500">Osaka, JP • 192.168.1.1</p>
+                            </div>
+                        </div>
+                        <button class="bg-red-500 text-white w-10 h-10 rounded border-2 border-black hover:bg-red-600 shadow-[2px_2px_0_#000] active:translate-y-0.5 active:shadow-none transition-all">
+                            <i class="fa-solid fa-skull"></i>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

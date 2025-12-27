@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BOOM! BOX | The Plaza</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;700&family=VT323&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'acid-purple': '#6B2CF5',
+              'neon-lime': '#CCFF00',
+              'hot-pink': '#FF0099',
+              'electric-blue': '#2D00F7',
+              'warning-yellow': '#FFEA00',
+              'off-white': '#F0F0F0',
+            },
+            fontFamily: {
+              display: ['"Bungee"', 'cursive'],
+              body: ['"Space Grotesk"', 'sans-serif'],
+              pixel: ['"VT323"', 'monospace'],
+            },
+            boxShadow: {
+              hard: '5px 5px 0px 0px #000000',
+              'hard-sm': '3px 3px 0px 0px #000000',
+              'hard-hover': '2px 2px 0px 0px #000000',
+            },
+            borderWidth: {
+              3: '3px',
+            },
+            backgroundImage: {
+              dots: 'radial-gradient(#000 1px, transparent 1px)',
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      /* 瀑布流布局 */
+      .masonry-grid {
+        column-count: 1;
+        column-gap: 1.5rem;
+      }
+      @media (min-width: 768px) {
+        .masonry-grid {
+          column-count: 2;
+        }
+      }
+
+      /* 卡片防止在列中间断开 */
+      .break-inside-avoid {
+        break-inside: avoid;
+      }
+
+      /* 跑马灯背景 */
+      .scrolling-text {
+        background: repeating-linear-gradient(45deg, #ffea00, #ffea00 10px, #fff 10px, #fff 20px);
+      }
+    </style>
+  </head>
+  <body class="bg-off-white font-body text-black min-h-screen bg-dots [background-size:20px_20px]">
+    <nav class="bg-white border-b-3 border-black py-4 sticky top-0 z-50 shadow-hard">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+          <a href="#" class="text-2xl font-display text-acid-purple drop-shadow-[2px_2px_0_#000]">BOOM! BOX</a>
+          <span class="bg-black text-white px-2 py-0.5 text-xs font-display transform -rotate-6">COMMUNITY</span>
+        </div>
+        <div class="flex gap-4">
+          <button
+            class="w-10 h-10 rounded-full bg-neon-lime border-3 border-black flex items-center justify-center hover:scale-110 transition-transform shadow-hard-sm"
+          >
+            <i class="fa-solid fa-plus text-xl"></i>
+          </button>
+          <div class="w-10 h-10 rounded-full bg-gray-200 border-3 border-black overflow-hidden">
+            <img src="https://placehold.co/100x100/CCFF00/000000?text=^_^" class="w-full h-full object-cover" />
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="bg-black text-neon-lime border-b-3 border-black py-2 overflow-hidden whitespace-nowrap font-pixel text-xl tracking-widest">
+      <div class="inline-block animate-[marquee_20s_linear_infinite]">
+        🔥 USER @KAIJU_BOY JUST PULLED A SECRET "MECHA-REX" 🔥 WEEKLY CHALLENGE: POST YOUR BLUE TOYS 🔥 TRADING EVENT LIVE THIS WEEKEND 🔥 🔥 USER
+        @KAIJU_BOY JUST PULLED A SECRET "MECHA-REX" 🔥 WEEKLY CHALLENGE: POST YOUR BLUE TOYS 🔥 TRADING EVENT LIVE THIS WEEKEND 🔥
+      </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <aside class="lg:col-span-3 space-y-8 hidden lg:block sticky top-24 h-fit">
+        <div class="bg-white border-3 border-black rounded-3xl p-4 shadow-hard">
+          <h3 class="font-display text-xl mb-4 px-2">CHANNELS</h3>
+          <nav class="space-y-2">
+            <button
+              class="w-full text-left font-bold text-lg px-4 py-3 bg-electric-blue text-white border-3 border-black rounded-xl shadow-hard-hover flex justify-between items-center transform -translate-x-1 -translate-y-1"
+            >
+              <span><i class="fa-solid fa-hashtag mr-2"></i> THE FEED</span>
+              <div class="w-2 h-2 bg-neon-lime rounded-full animate-pulse"></div>
+            </button>
+            <button
+              class="w-full text-left font-bold text-lg px-4 py-3 bg-white hover:bg-gray-100 border-3 border-transparent hover:border-black rounded-xl transition-all text-gray-500 hover:text-black"
+            >
+              <span><i class="fa-solid fa-box-open mr-2"></i> UNBOXING</span>
+            </button>
+            <button
+              class="w-full text-left font-bold text-lg px-4 py-3 bg-white hover:bg-gray-100 border-3 border-transparent hover:border-black rounded-xl transition-all text-gray-500 hover:text-black"
+            >
+              <span><i class="fa-solid fa-handshake mr-2"></i> TRADING</span>
+            </button>
+            <button
+              class="w-full text-left font-bold text-lg px-4 py-3 bg-white hover:bg-gray-100 border-3 border-transparent hover:border-black rounded-xl transition-all text-gray-500 hover:text-black"
+            >
+              <span><i class="fa-solid fa-fire mr-2"></i> FLEX ZONE</span>
+            </button>
+          </nav>
+        </div>
+
+        <div class="bg-warning-yellow border-3 border-black rounded-3xl p-6 shadow-hard relative overflow-hidden">
+          <i class="fa-solid fa-bolt text-9xl absolute -right-6 -bottom-6 text-black opacity-10 transform rotate-12"></i>
+          <h3 class="font-display text-xl mb-4 relative z-10">TRENDING</h3>
+          <div class="flex flex-wrap gap-2 relative z-10">
+            <span
+              class="bg-white border-2 border-black px-2 py-1 rounded-lg font-bold text-xs hover:bg-black hover:text-white cursor-pointer transition-colors"
+              >#SkullPanda</span
+            >
+            <span
+              class="bg-white border-2 border-black px-2 py-1 rounded-lg font-bold text-xs hover:bg-black hover:text-white cursor-pointer transition-colors"
+              >#SecretChase</span
+            >
+            <span
+              class="bg-white border-2 border-black px-2 py-1 rounded-lg font-bold text-xs hover:bg-black hover:text-white cursor-pointer transition-colors"
+              >#Fail</span
+            >
+            <span
+              class="bg-white border-2 border-black px-2 py-1 rounded-lg font-bold text-xs hover:bg-black hover:text-white cursor-pointer transition-colors"
+              >#SetupWars</span
+            >
+          </div>
+        </div>
+      </aside>
+
+      <main class="lg:col-span-6">
+        <div class="bg-white border-3 border-black rounded-3xl p-4 mb-8 shadow-hard flex gap-4 items-start">
+          <div class="w-12 h-12 bg-gray-200 rounded-full border-2 border-black shrink-0 overflow-hidden">
+            <img src="https://placehold.co/100x100/CCFF00/000000?text=^_^" class="w-full h-full object-cover" />
+          </div>
+          <div class="flex-1">
+            <input
+              type="text"
+              placeholder="Share your pull or start a trade..."
+              class="w-full bg-gray-100 border-2 border-transparent focus:border-black focus:bg-white rounded-xl px-4 py-3 font-bold outline-none transition-all mb-3"
+            />
+            <div class="flex justify-between items-center">
+              <div class="flex gap-2 text-gray-400">
+                <button class="hover:text-black transition-colors"><i class="fa-solid fa-image text-xl"></i></button>
+                <button class="hover:text-black transition-colors"><i class="fa-solid fa-video text-xl"></i></button>
+                <button class="hover:text-black transition-colors"><i class="fa-solid fa-tag text-xl"></i></button>
+              </div>
+              <button class="bg-black text-white px-6 py-2 rounded-xl font-display text-sm hover:bg-hot-pink transition-colors">POST</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="masonry-grid space-y-6">
+          <article
+            class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-hard break-inside-avoid mb-6 group hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="p-4 flex justify-between items-center border-b-2 border-black">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-electric-blue rounded-full border-2 border-black"></div>
+                <div>
+                  <h4 class="font-bold text-sm">@toy_master</h4>
+                  <p class="text-xs text-gray-500 font-bold">20 min ago</p>
+                </div>
+              </div>
+              <button class="text-gray-400 hover:text-black"><i class="fa-solid fa-ellipsis"></i></button>
+            </div>
+
+            <div class="relative">
+              <img src="https://placehold.co/600x600/FF0099/FFFFFF?text=SECRET+FOUND!" class="w-full object-cover" />
+              <div
+                class="absolute top-4 right-4 bg-warning-yellow text-black font-display text-xs px-2 py-1 border-2 border-black transform rotate-6 shadow-sm"
+              >
+                SSR PULLED
+              </div>
+            </div>
+
+            <div class="p-4">
+              <h3 class="font-bold text-lg mb-2">Can't believe my luck today! 😭✨</h3>
+              <p class="text-sm text-gray-600 mb-4">Bought one single box from the new series and got the secret. This sculpt is insane.</p>
+
+              <div class="flex gap-2 mb-4">
+                <span class="text-xs font-bold text-blue-600">#Unboxing</span>
+                <span class="text-xs font-bold text-blue-600">#LuckyDay</span>
+              </div>
+
+              <div class="flex justify-between items-center pt-2 border-t-2 border-gray-100">
+                <button class="flex items-center gap-2 group/btn">
+                  <div
+                    class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover/btn:bg-hot-pink group-hover/btn:text-white transition-colors border-2 border-transparent group-hover/btn:border-black"
+                  >
+                    <i class="fa-solid fa-fire"></i>
+                  </div>
+                  <span class="font-display text-sm text-gray-500 group-hover/btn:text-black">2.4K HYPE</span>
+                </button>
+                <button class="flex items-center gap-2 text-gray-500 hover:text-black font-bold text-sm">
+                  <i class="fa-regular fa-comment-dots text-lg"></i> 42
+                </button>
+                <button class="flex items-center gap-2 text-gray-500 hover:text-black font-bold text-sm">
+                  <i class="fa-solid fa-share text-lg"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article
+            class="bg-acid-purple text-white border-3 border-black rounded-3xl p-6 shadow-hard break-inside-avoid mb-6 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300"
+          >
+            <i class="fa-solid fa-handshake text-8xl absolute -right-4 -bottom-4 text-black opacity-20 transform -rotate-12"></i>
+
+            <div class="flex items-center gap-3 mb-4 relative z-10">
+              <div class="w-8 h-8 bg-white rounded-full border-2 border-black"></div>
+              <span class="font-bold text-sm">@collector_99</span>
+              <span class="bg-neon-lime text-black text-[10px] font-bold px-2 py-0.5 border border-black rounded-full">TRADING</span>
+            </div>
+
+            <h3 class="font-display text-2xl mb-2 relative z-10">WTT: My Duplicate Hirono</h3>
+            <p class="font-bold text-sm opacity-90 mb-4 relative z-10">
+              I have an extra "Little One" (Opened, card included). Looking for "The Ghost" or "Faker". DM me!
+            </p>
+
+            <div class="flex gap-2 relative z-10">
+              <div class="w-16 h-16 bg-black rounded-lg border-2 border-white overflow-hidden">
+                <img src="https://placehold.co/100x100/333/fff?text=HAVE" class="w-full h-full object-cover opacity-80" />
+              </div>
+              <div class="w-16 h-16 bg-white rounded-lg border-2 border-black overflow-hidden flex items-center justify-center text-black">
+                <span class="font-display text-xs">WANT?</span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center mt-4 relative z-10">
+              <button class="bg-white text-black px-4 py-1 rounded-lg border-2 border-black font-bold text-xs hover:bg-neon-lime transition-colors">
+                MESSAGE
+              </button>
+              <span class="text-xs font-mono opacity-70">Osaka, JP</span>
+            </div>
+          </article>
+
+          <article
+            class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-hard break-inside-avoid mb-6 group hover:-translate-y-1 transition-transform duration-300"
+          >
+            <div class="p-3">
+              <div class="bg-black rounded-xl overflow-hidden border-2 border-black relative">
+                <img src="https://placehold.co/400x500/2D00F7/FFFFFF?text=DISPLAY" class="w-full object-cover" />
+                <div class="absolute bottom-2 left-2 bg-black/70 text-white px-2 py-1 rounded text-xs font-bold backdrop-blur-sm">
+                  <i class="fa-solid fa-camera"></i> Setup Showcase
+                </div>
+              </div>
+            </div>
+            <div class="px-4 pb-4">
+              <div class="flex justify-between items-center">
+                <div class="flex items-center gap-2">
+                  <div class="w-6 h-6 bg-warning-yellow rounded-full border border-black"></div>
+                  <span class="font-bold text-sm">@shelf_life</span>
+                </div>
+                <div class="flex items-center gap-1 text-sm font-bold"><i class="fa-solid fa-fire text-hot-pink"></i> 856</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="bg-warning-yellow border-3 border-black rounded-3xl p-4 shadow-hard break-inside-avoid mb-6 text-center">
+            <span class="bg-black text-white px-2 py-1 text-xs font-display">OFFICIAL</span>
+            <h3 class="font-display text-xl mt-2">WEEKLY RAFFLE LIVE!</h3>
+            <p class="text-xs font-bold mb-3">Win a Mega Space Molly 400%</p>
+            <button
+              class="w-full bg-white border-2 border-black py-2 rounded-xl font-bold hover:bg-black hover:text-white transition-colors shadow-[2px_2px_0_#000]"
+            >
+              ENTER NOW
+            </button>
+          </article>
+        </div>
+
+        <div class="text-center mt-8 pb-8">
+          <i class="fa-solid fa-spinner fa-spin text-4xl text-black"></i>
+        </div>
+      </main>
+
+      <aside class="lg:col-span-3 space-y-8 hidden lg:block sticky top-24 h-fit">
+        <div class="bg-black text-white border-3 border-black rounded-3xl p-6 shadow-hard relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-hot-pink to-transparent opacity-50"></div>
+
+          <h3 class="font-display text-xl mb-6 text-warning-yellow text-center"><i class="fa-solid fa-trophy mr-2"></i> TOP COLLECTORS</h3>
+
+          <div class="space-y-4 font-pixel text-lg tracking-wide">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="text-warning-yellow text-2xl">1</span>
+                <div class="w-8 h-8 bg-neon-lime rounded-full border border-white"></div>
+                <span>Kaiju_Boy</span>
+              </div>
+              <span class="text-neon-lime">9999 XP</span>
+            </div>
+            <div class="flex items-center justify-between opacity-90">
+              <div class="flex items-center gap-3">
+                <span class="text-gray-400 text-2xl">2</span>
+                <div class="w-8 h-8 bg-hot-pink rounded-full border border-white"></div>
+                <span>Sarah_Toys</span>
+              </div>
+              <span class="text-hot-pink">8420 XP</span>
+            </div>
+            <div class="flex items-center justify-between opacity-80">
+              <div class="flex items-center gap-3">
+                <span class="text-orange-600 text-2xl">3</span>
+                <div class="w-8 h-8 bg-electric-blue rounded-full border border-white"></div>
+                <span>Dimoo_Lvr</span>
+              </div>
+              <span class="text-electric-blue">7200 XP</span>
+            </div>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-gray-800 text-center">
+            <p class="text-xs font-bold text-gray-400 mb-2">YOUR RANK: 42</p>
+            <button class="w-full bg-gray-800 hover:bg-gray-700 py-2 rounded-lg font-bold text-xs transition-colors">VIEW FULL LIST</button>
+          </div>
+        </div>
+
+        <div class="bg-hot-pink border-3 border-black rounded-3xl p-1 shadow-hard group cursor-pointer">
+          <div
+            class="bg-white border-2 border-black rounded-[1.3rem] p-4 text-center h-full flex flex-col items-center justify-center relative overflow-hidden"
+          >
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/diagmonds-light.png')] opacity-50"></div>
+            <span class="bg-black text-white text-[10px] font-bold px-2 py-0.5 absolute top-2 left-2">AD</span>
+
+            <i class="fa-solid fa-gift text-6xl text-hot-pink mb-2 group-hover:scale-110 transition-transform"></i>
+            <h4 class="font-display text-xl leading-none mb-1">MYSTERY BOX</h4>
+            <p class="text-xs font-bold text-gray-500">Subscription starts at $29/mo</p>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="fixed bottom-6 right-6 lg:hidden z-50">
+      <button
+        class="w-16 h-16 bg-black text-white rounded-full border-3 border-white shadow-hard flex items-center justify-center text-2xl hover:scale-110 transition-transform"
+      >
+        <i class="fa-solid fa-pen-nib"></i>
+      </button>
+    </div>
+  </body>
+</html>

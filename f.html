@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BOOM! BOX | System Config</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'acid-purple': '#6B2CF5',
+                        'neon-lime': '#CCFF00',
+                        'hot-pink': '#FF0099',
+                        'electric-blue': '#2D00F7',
+                        'warning-yellow': '#FFEA00',
+                        'dark-console': '#111111',
+                    },
+                    fontFamily: {
+                        'display': ['"Bungee"', 'cursive'],
+                        'body': ['"Space Grotesk"', 'sans-serif'],
+                        'mono': ['"Share Tech Mono"', 'monospace'],
+                    },
+                    boxShadow: {
+                        'hard': '4px 4px 0px 0px #000000',
+                        'hard-hover': '2px 2px 0px 0px #000000',
+                        'inner-hard': 'inset 3px 3px 0px 0px rgba(0,0,0,0.5)',
+                    },
+                    borderWidth: {
+                        '3': '3px',
+                    },
+                    backgroundImage: {
+                        'stripe-pattern': "repeating-linear-gradient(45deg, #FFEA00, #FFEA00 10px, #000 10px, #000 20px)",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 自定义开关样式 */
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #CCFF00;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #000;
+        }
+        
+        /* 终端打字光标 */
+        .cursor-blink {
+            animation: blink 1s step-end infinite;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+        /* 滚动条隐藏但可滚动 */
+        .hide-scroll::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-acid-purple font-body text-black min-h-screen overflow-x-hidden">
+
+    <nav class="bg-white border-b-3 border-black py-4 sticky top-0 z-50 shadow-hard">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <a href="#" class="bg-black text-white w-10 h-10 rounded-full flex items-center justify-center border-2 border-white hover:bg-neon-lime hover:text-black transition-colors">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </a>
+                <span class="text-xl font-display">SYSTEM CONFIG</span>
+            </div>
+            <div class="bg-black text-neon-lime px-3 py-1 font-mono text-xs border-2 border-neon-lime animate-pulse">
+                STATUS: ONLINE
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8 flex flex-col lg:flex-row gap-8 h-[calc(100vh-100px)]">
+        
+        <aside class="w-full lg:w-1/4 flex flex-col gap-4">
+            <div class="bg-white border-3 border-black rounded-2xl p-4 shadow-hard">
+                <h3 class="font-display text-xl mb-4 px-2">MENU</h3>
+                <nav class="space-y-2">
+                    <button class="w-full text-left font-bold text-lg px-4 py-3 bg-neon-lime border-3 border-black rounded-xl shadow-hard-hover flex justify-between items-center group">
+                        <span><i class="fa-solid fa-id-card mr-2"></i> PROFILE</span>
+                        <i class="fa-solid fa-chevron-right text-sm"></i>
+                    </button>
+                    <button class="w-full text-left font-bold text-lg px-4 py-3 bg-white border-3 border-transparent hover:border-black hover:bg-gray-100 rounded-xl transition-all flex justify-between items-center group text-gray-500 hover:text-black">
+                        <span><i class="fa-solid fa-shield-halved mr-2"></i> SECURITY</span>
+                    </button>
+                    <button class="w-full text-left font-bold text-lg px-4 py-3 bg-white border-3 border-transparent hover:border-black hover:bg-gray-100 rounded-xl transition-all flex justify-between items-center group text-gray-500 hover:text-black">
+                        <span><i class="fa-solid fa-bell mr-2"></i> NOTIFICATIONS</span>
+                    </button>
+                    <button class="w-full text-left font-bold text-lg px-4 py-3 bg-white border-3 border-transparent hover:border-black hover:bg-gray-100 rounded-xl transition-all flex justify-between items-center group text-gray-500 hover:text-black">
+                        <span><i class="fa-solid fa-wallet mr-2"></i> BILLING</span>
+                    </button>
+                </nav>
+            </div>
+
+            <div class="flex-1 bg-dark-console border-3 border-black rounded-2xl p-4 font-mono text-xs text-green-500 overflow-hidden relative hidden lg:block">
+                <div class="absolute inset-0 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 pointer-events-none bg-[length:100%_4px,3px_100%]"></div>
+                <div class="opacity-70 space-y-1">
+                    <p>> INITIATING SYSTEM...</p>
+                    <p>> USER_ID: 8829-KJA DETECTED</p>
+                    <p>> LOADING ASSETS... [OK]</p>
+                    <p>> CHECKING PERMISSIONS... [ADMIN]</p>
+                    <p>> CONNECTED TO SERVER: TOKYO_03</p>
+                    <p>> WAITING FOR INPUT<span class="cursor-blink">_</span></p>
+                </div>
+            </div>
+        </aside>
+
+        <main class="w-full lg:w-3/4 bg-white border-3 border-black rounded-3xl p-6 lg:p-10 shadow-hard relative overflow-y-auto hide-scroll">
+            
+            <div class="flex justify-between items-end mb-8 border-b-3 border-black pb-4">
+                <div>
+                    <h2 class="font-display text-4xl">EDIT PROFILE</h2>
+                    <p class="font-bold text-gray-500">Update your public avatar and handle.</p>
+                </div>
+                <button class="bg-black text-white px-6 py-2 font-display text-sm border-2 border-black hover:bg-white hover:text-black transition-colors rounded-lg">
+                    VIEW PUBLIC PAGE
+                </button>
+            </div>
+
+            <div class="space-y-8">
+                
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="relative w-32 h-32">
+                        <div class="w-full h-full rounded-full border-3 border-black overflow-hidden bg-gray-100">
+                            <img src="https://placehold.co/200x200/CCFF00/000000?text=^_^" class="w-full h-full object-cover">
+                        </div>
+                        <button class="absolute bottom-0 right-0 bg-hot-pink text-white w-10 h-10 rounded-full border-3 border-black flex items-center justify-center hover:scale-110 transition-transform shadow-hard-hover">
+                            <i class="fa-solid fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h4 class="font-display text-lg mb-2">AVATAR PRESET</h4>
+                        <div class="flex gap-2 justify-center md:justify-start">
+                            <button class="w-10 h-10 rounded-lg border-3 border-black bg-electric-blue hover:-translate-y-1 transition-transform"></button>
+                            <button class="w-10 h-10 rounded-lg border-3 border-black bg-neon-lime hover:-translate-y-1 transition-transform"></button>
+                            <button class="w-10 h-10 rounded-lg border-3 border-black bg-warning-yellow hover:-translate-y-1 transition-transform"></button>
+                            <button class="w-10 h-10 rounded-lg border-3 border-dashed border-gray-400 flex items-center justify-center hover:border-black hover:text-black text-gray-400">
+                                <i class="fa-solid fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                        <label class="font-bold text-sm bg-black text-white px-2 py-0.5 inline-block transform -rotate-1">CODENAME (USERNAME)</label>
+                        <input type="text" value="KAIJU_BOY" class="w-full bg-off-white border-3 border-black rounded-xl px-4 py-3 font-mono font-bold focus:outline-none focus:bg-white focus:shadow-[4px_4px_0_#CCFF00] transition-all">
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="font-bold text-sm text-gray-500 px-2">EMAIL ADDRESS</label>
+                        <input type="email" value="player1@boombox.com" class="w-full bg-off-white border-3 border-black rounded-xl px-4 py-3 font-mono font-bold focus:outline-none focus:bg-white focus:shadow-[4px_4px_0_#CCFF00] transition-all">
+                    </div>
+
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="font-bold text-sm text-gray-500 px-2">BIO / MANIFESTO</label>
+                        <textarea rows="3" class="w-full bg-off-white border-3 border-black rounded-xl px-4 py-3 font-bold focus:outline-none focus:bg-white focus:shadow-[4px_4px_0_#CCFF00] transition-all resize-none">Collecting since 2022. Hirono addict. Looking for rare drops only.</textarea>
+                        <p class="text-right text-xs font-bold text-gray-400">120/200</p>
+                    </div>
+                </div>
+
+                <hr class="border-t-3 border-black border-dashed my-8">
+
+                <div>
+                    <h3 class="font-display text-2xl mb-6">GAMEPLAY SETTINGS</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between bg-gray-50 p-4 border-2 border-black rounded-xl">
+                            <div>
+                                <h4 class="font-bold">PUBLIC PROFILE</h4>
+                                <p class="text-xs text-gray-500 font-bold">Allow other users to see your collection.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" checked class="sr-only peer">
+                                <div class="w-14 h-8 bg-gray-300 peer-focus:outline-none rounded-none border-3 border-black peer peer-checked:bg-neon-lime transition-all"></div>
+                                <div class="absolute left-1 top-1 bg-white border-2 border-black w-6 h-6 peer-checked:translate-x-full transition-transform"></div>
+                            </label>
+                        </div>
+
+                        <div class="flex items-center justify-between bg-gray-50 p-4 border-2 border-black rounded-xl">
+                            <div>
+                                <h4 class="font-bold">SOUND FX</h4>
+                                <p class="text-xs text-gray-500 font-bold">Enable UI sounds and background beats.</p>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" class="sr-only peer">
+                                <div class="w-14 h-8 bg-gray-300 peer-focus:outline-none rounded-none border-3 border-black peer peer-checked:bg-neon-lime transition-all"></div>
+                                <div class="absolute left-1 top-1 bg-white border-2 border-black w-6 h-6 peer-checked:translate-x-full transition-transform"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 bg-stripe-pattern p-1 rounded-2xl">
+                    <div class="bg-white p-6 rounded-xl border-3 border-black">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-hot-pink text-white w-12 h-12 rounded-lg border-2 border-black flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="font-display text-xl text-red-600">DANGER ZONE</h3>
+                                <p class="text-sm font-bold text-gray-600 mb-4">Once you delete your account, there is no going back. All your rare collectibles will be burned.</p>
+                                <button class="text-red-600 font-bold underline decoration-2 hover:bg-red-100 px-2 py-1 rounded transition-colors">
+                                    DELETE ACCOUNT
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="sticky bottom-0 left-0 w-full bg-white/90 backdrop-blur border-t-3 border-black pt-4 pb-2 mt-8 flex justify-end gap-4">
+                <button class="font-bold text-gray-500 hover:text-black">CANCEL</button>
+                <button class="bg-neon-lime text-black font-display text-xl px-8 py-3 rounded-xl border-3 border-black shadow-hard hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-hard-hover transition-all">
+                    SAVE CHANGES
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+</body>
+</html>

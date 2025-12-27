@@ -31,6 +31,9 @@ const initialState: TabState = {
   // Placeholder Data: You will fetch this from an API in a real app
   menuData: [
     { key: '/dashboard', label: 'menu_dashboard', icon: 'DashboardOutlined', path: '/dashboard', componentKey: 'DashboardPage' },
+    { key: '/cms', label: 'menu_cms', icon: 'DashboardOutlined', path: '/cms', componentKey: 'CmsPage' },
+    { key: '/models', label: 'menu_models', icon: 'DashboardOutlined', path: '/models', componentKey: 'ModelListPage' },
+    { key: '/editmodels', label: 'menu_edit_models', icon: 'DashboardOutlined', path: '/editmodels', componentKey: 'DynamicEditPage' },
     {
       key: 'user-group',
       label: 'menu_users',

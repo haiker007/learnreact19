@@ -7,7 +7,7 @@ const DynamicIcon = ({ iconName }: { iconName: string }) => {
 
   useEffect(() => {
     import('@ant-design/icons')
-      .then((icons) => {
+      .then((icons: any) => {
         const Icon = icons[iconName];
         if (Icon) {
           setIconComponent(() => Icon);

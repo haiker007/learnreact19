@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>BOOM! BOX | Trade Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+      /* CSS Gradient for Card Split */
+      .trade-split {
+        background: linear-gradient(135deg, #fff 50%, #f3f4f6 50%);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { 'electric-blue': '#2D00F7', 'hot-pink': '#FF0099' },
+            fontFamily: { display: ['"Bungee"', 'cursive'], body: ['"Space Grotesk"', 'sans-serif'] },
+            borderWidth: { 3: '3px' },
+            boxShadow: { hard: '4px 4px 0px 0px #000' },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-electric-blue font-body text-black min-h-screen p-4">
+    <div class="container mx-auto mb-8 bg-white border-3 border-black rounded-2xl p-4 shadow-hard flex flex-wrap gap-4 items-center justify-between">
+      <h1 class="font-display text-2xl">MARKETPLACE</h1>
+      <div class="flex gap-2 overflow-x-auto">
+        <button class="bg-black text-white px-4 py-2 rounded-lg font-bold border-2 border-black text-sm">ALL</button>
+        <button class="bg-white text-black px-4 py-2 rounded-lg font-bold border-2 border-black hover:bg-hot-pink hover:text-white text-sm">
+          REGION: JP
+        </button>
+        <button class="bg-white text-black px-4 py-2 rounded-lg font-bold border-2 border-black hover:bg-hot-pink hover:text-white text-sm">
+          VERIFIED ONLY <i class="fa-solid fa-check-circle"></i>
+        </button>
+        <button class="bg-white text-black px-4 py-2 rounded-lg font-bold border-2 border-black hover:bg-hot-pink hover:text-white text-sm">
+          SERIES: HIRONO
+        </button>
+      </div>
+    </div>
+
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-hard relative group hover:-translate-y-2 transition-transform">
+        <div class="p-3 bg-black text-white flex justify-between items-center">
+          <div class="flex items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-hot-pink"></div>
+            <span class="font-bold text-sm">@collector_99</span>
+          </div>
+          <span class="text-[10px] font-bold bg-white text-black px-2 rounded">TRUST SCORE: 100</span>
+        </div>
+
+        <div class="flex h-48 relative border-b-3 border-black">
+          <div class="w-1/2 p-2 bg-blue-50 relative border-r-2 border-black border-dashed flex flex-col items-center justify-center">
+            <span class="absolute top-2 left-2 bg-electric-blue text-white text-[10px] font-bold px-2 py-0.5 rounded">HAVE</span>
+            <img src="https://placehold.co/150x150/2D00F7/fff?text=HIRONO+V1" class="w-24 h-24 object-contain mb-1" />
+            <p class="font-bold text-xs text-center leading-tight">Hirono The Other One</p>
+          </div>
+
+          <div
+            class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white border-2 border-black rounded-full flex items-center justify-center z-10 shadow-sm"
+          >
+            <i class="fa-solid fa-arrow-right-arrow-left text-sm"></i>
+          </div>
+
+          <div class="w-1/2 p-2 bg-pink-50 relative flex flex-col items-center justify-center">
+            <span class="absolute top-2 right-2 bg-hot-pink text-white text-[10px] font-bold px-2 py-0.5 rounded">WANT</span>
+            <img src="https://placehold.co/150x150/FF0099/fff?text=CRYBABY" class="w-24 h-24 object-contain mb-1 grayscale opacity-70" />
+            <p class="font-bold text-xs text-center leading-tight">Crybaby Sad Club</p>
+          </div>
+        </div>
+
+        <div class="p-4 flex justify-between items-center bg-white">
+          <div class="text-xs font-bold text-gray-500"><i class="fa-solid fa-location-dot"></i> Osaka, JP (Mail/Meet)</div>
+          <button
+            class="bg-black text-white px-4 py-2 rounded-lg font-display text-xs border-2 border-black hover:bg-hot-pink hover:border-hot-pink transition-colors"
+          >
+            MAKE OFFER
+          </button>
+        </div>
+      </div>
+
+      <div class="bg-white border-3 border-black rounded-3xl overflow-hidden shadow-hard relative group hover:-translate-y-2 transition-transform">
+        <div class="p-3 bg-gray-200 text-black border-b-3 border-black flex justify-between items-center">
+          <span class="font-bold text-sm">@reseller_king</span>
+          <span class="text-[10px] font-bold bg-black text-white px-2 rounded">TRUST: 85</span>
+        </div>
+
+        <div class="flex h-48 relative border-b-3 border-black">
+          <div class="w-full bg-white flex items-center justify-center relative p-4">
+            <span class="absolute top-2 left-2 bg-green-500 text-black text-[10px] font-bold px-2 py-0.5 rounded border border-black">SELLING</span>
+            <img src="https://placehold.co/200x200/eee/111?text=FULL+SET" class="h-full object-contain" />
+          </div>
+        </div>
+
+        <div class="p-4 flex justify-between items-center bg-white">
+          <div>
+            <p class="font-display text-xl">$120.00</p>
+            <p class="text-[10px] font-bold text-gray-400">Labubu Macaron Set</p>
+          </div>
+          <button class="bg-white text-black px-4 py-2 rounded-lg font-display text-xs border-2 border-black hover:bg-green-400 transition-colors">
+            BUY NOW
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
