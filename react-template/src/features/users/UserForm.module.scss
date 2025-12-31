@@ -1,0 +1,11 @@
+.formLayout {
+  @apply flex flex-col gap-4;
+}
+
+.footer {
+  @apply absolute bottom-0 right-0 w-full border-t bg-white px-6 py-4 text-right;
+}
+
+.fullWidth {
+  @apply w-full;
+}

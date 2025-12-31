@@ -1,0 +1,9 @@
+.footer {
+  /* @apply absolute bottom-0 right-0 w-full border-t bg-white px-6 py-4 text-right; */
+}
+
+/* Optional: Custom styling for the drawer header/body if needed */
+.drawerBody {
+  /* @apply pb-24; */
+  /* Add padding so content isn't hidden behind footer */
+}

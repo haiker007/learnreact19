@@ -1,0 +1,36 @@
+/* src/features/auth/LoginView.module.scss */
+
+.container {
+  /* Tailwind utilities applied here */
+  @apply flex min-h-screen items-center justify-center bg-gray-50 px-4;
+}
+
+.card {
+  @apply w-full max-w-sm rounded-xl bg-white shadow-xl transition-all;
+
+  /* Sass Nesting for specific overrides */
+  &:hover {
+    @apply shadow-2xl;
+  }
+
+  /* Deep selector to target AntD components internally if needed */
+  :global(.ant-card-body) {
+    @apply p-8;
+  }
+}
+
+.titleGroup {
+  @apply mb-8 text-center;
+
+  h2 {
+    @apply mb-2 text-2xl font-bold text-gray-900;
+  }
+
+  span {
+    @apply text-gray-500;
+  }
+}
+
+.submitBtn {
+  @apply mt-2 h-12 text-lg font-medium;
+}

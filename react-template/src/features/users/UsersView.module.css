@@ -1,0 +1,50 @@
+@reference "tailwindcss";
+
+@layer components {
+  .container {
+    @apply flex h-full flex-col p-6;
+  }
+
+  .header {
+    @apply mb-6 flex items-center justify-between;
+
+    & h1 {
+      @apply p-4 m-0 text-2xl font-bold bg-amber-400;
+    }
+  }
+
+  .tableCard {
+    @apply flex-1 overflow-hidden rounded-lg bg-white shadow-sm;
+
+    /* Example of deep customization for AntD Table */
+    :global {
+      .ant-table-thead>tr>th {
+        @apply bg-gray-50 text-xs font-semibold uppercase text-gray-500;
+      }
+
+      .ant-table-tbody>tr:hover>td {
+        @apply bg-blue-50/50 cursor-pointer transition-colors;
+      }
+    }
+  }
+
+  .statusBadge {
+    @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium;
+
+    &.active {
+      @apply bg-green-100 text-green-800;
+    }
+
+    &.inactive {
+      @apply bg-gray-100 text-gray-800;
+    }
+  }
+
+  .actionBtn {
+    @apply text-gray-400 transition-colors hover:text-blue-600;
+
+    &.delete {
+      @apply hover:text-red-600;
+    }
+  }
+}
